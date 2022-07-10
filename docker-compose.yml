@@ -1,0 +1,18 @@
+version: "2.3"
+services:
+  demo-container-db:
+    image: mariadb:latest
+    #restart: always
+    environment:
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: password1
+      MYSQL_ROOT_PASSWORD: passwordRoot
+      MYSQL_DATABASE: tutoDB
+    ports:
+    - "3306:3306"
+    networks:
+    - tuto_network
+    
+networks:
+  tuto_network:
+    driver: bridge
